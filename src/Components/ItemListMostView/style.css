@@ -1,0 +1,66 @@
+.itemListMostView{
+    border-bottom: solid 1px #f0f0f0;
+    margin-bottom: 30px;
+}
+
+.itemListMostView span{
+    font-size: 13px !important;
+    font-weight: 700 !important;
+    margin-bottom: 5px !important;
+}
+
+.itemListMostView-img{
+    width: 50%;
+    height: 185px;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.itemListMostView-container{
+    display: flex;
+}
+
+.itemListMostView-item_icon{
+    width: 20px !important;
+    height: 20px !important;
+    opacity: 0.3;
+}
+
+.itemListMostView-itemInfor{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.itemListMostView-itemInfor span{
+    font-size: 13px;
+    font-weight: 600;
+    color: black;
+    margin: 0px 0px 0px 5px;
+}
+
+.itemListMostView-content{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-left: 10px;
+}
+
+.itemListMostView-content button{
+    font-size: 12px;
+    padding: 6px 10px;
+    color: #0faed1;
+    border: solid 1px #0faed1;
+    border-radius: 4px;
+    font-weight: 600;
+    transition: 0.5s all ease;
+    background-color: white;
+}
+
+.itemListMostView:hover .itemListMostView-content button{
+    background-color: #0faed1;
+    color: white;
+}

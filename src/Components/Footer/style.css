@@ -1,0 +1,58 @@
+.footer{
+    background-color: #0f4b54;
+    display: flex;
+    justify-content: center;
+    color: white;
+    font-size: 13px;
+}
+
+.footer-container{
+    width: 1200px;
+    display: flex;
+    padding: 50px 20px;
+}
+
+.footer-container h3{
+    font-size: 15px;
+    font-weight: 900;
+    margin-bottom: 5px;
+}
+
+.footer-TeamPage{
+    flex: 80%;
+    font-weight: 900;
+}
+
+
+.footer-inforTeam{
+    margin: 0px 20px;
+    flex-grow: 1;
+}
+
+.footer-inforContact{
+    flex: 60%;
+}
+
+.footer-inforContact strong span{
+    color: #5fff46;
+}
+.footer-inforContact p span{
+    color: #007bff;
+}
+
+
+@media screen and (max-width : 860px) {
+    .footer-container{
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .footer-inforTeam{
+        margin: 20px 0px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    }
+}

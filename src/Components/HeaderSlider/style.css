@@ -1,0 +1,96 @@
+.slick-dots{
+    display: none !important;
+}
+.slider-container{
+    margin-top: 73px;
+    background-image: url('https://assets.dichtruyenvip.com/assets/images/bg_lowpoly.png');
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.slider-content{
+    max-width: 1200px;
+    width: 100%;
+    margin: 10px;
+}
+
+.slider-content_main{
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: center;
+}
+
+.slider-left{
+    flex: 20%;
+}
+
+.slider-right{
+    flex: 80%;
+    overflow: hidden;
+}
+
+.slider-header{
+    color: white;
+    font-size: 18px;
+    font-weight: 600;
+    margin: 8px 0px;
+}
+
+
+
+@media screen and (min-width : 860px) and (max-width : 1200px) {
+    .slider-content{
+        max-width: 860px;
+        padding: 14px;
+    }
+
+    .slider-right .itemManga{
+        width: 200px !important;
+    }
+
+    .slider-left{
+        flex: 25%;
+        margin-right: 5px;
+    }
+    
+    .slider-right{
+        flex: 75%;
+    }
+    .slider-container{
+        margin-top: 40px;
+    }
+}
+
+
+@media screen and (min-width : 740px) and (max-width : 859px){
+    .slider-content{
+        max-width: 700px;
+    }
+
+    .slider-right .itemManga{
+        width: 200px !important;
+    }
+
+    .slider-left{
+        flex: 30%;
+        margin-right: 5px;
+    }
+    
+    .slider-right{
+        flex: 60%;
+    }
+}
+
+@media screen and (max-width : 739px) {
+    .slider-left{
+        display: none;
+    }
+    .slider-right{
+        width: 460px !important;
+    }
+    .slider-content_main{
+        justify-content: center;
+    }
+}

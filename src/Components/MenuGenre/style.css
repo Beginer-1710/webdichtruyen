@@ -1,0 +1,36 @@
+.menuGenre{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: black;
+    font-size: 13px;
+    font-weight: 700;
+    padding: 20px;
+    box-shadow: 0 0 6px #00000061;
+    border-radius: 0px 0px 5px 5px;
+    background-color: white;
+    position: absolute;
+    top: 100%;
+    display: none;
+}
+.menuGenre-content{
+    width: 1300px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.MenuGenre-item{
+    padding: 6px 20px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+.MenuGenre-item:hover{
+    color: white;
+    background-color: #2098a8;
+}
+
+.menuGenre-content a{
+    text-decoration: none;
+}

@@ -1,0 +1,73 @@
+.sliderGenre{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin-top: 73px;
+    height: 157px;
+    background-image: url("https://assets.dichtruyenvip.com/assets/images/bg_lowpoly.png");
+}
+
+.sliderGenre-container{
+    max-width: 1200px;
+    width: 100%;
+    
+}
+
+.sliderGenre-item{
+    max-width: 320px;
+    width: 100%;
+    height: 60px;
+}
+
+.sliderGenre-item .itemLikeGenre{
+    background-size: cover;
+    background-position: top;
+}
+
+.sliderGenre-item .itemLikeGenre-nameGenre{
+    left: 0;
+}
+
+.sliderGenre-item .itemLikeGenre-nameGenre::before{
+    left: 100%;
+    border-left: 0;
+    border-bottom: 51px solid #ffffffde;
+    border-right: 20px solid transparent;
+}
+
+.sliderGenre-item .itemLikeGenre:hover .itemLikeGenre-nameGenre{
+    width: 100px;
+    background-color: #ffffffde;
+    color: black;
+}
+
+.sliderGenre-container h1{
+    color: white;
+    font-size: 13px;
+    margin: 10px 0px;
+}
+
+.sliderGenre-item_infor{
+    display: flex;
+    color: white;
+    font-size: 12px;
+    font-weight: 700;
+    max-width: 320px;
+    width: 100%;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+.sliderGenre-item .itemLikeGenre-nameGenre{
+    width: 140px !important;
+}
+
+@media screen and (min-width : 860px) and (max-width : 1200px){
+    .sliderGenre{
+        margin-top: 40px;
+    }
+    .sliderGenre-container{
+        max-width: 860px;
+        padding: 0px 14px;
+    }
+}

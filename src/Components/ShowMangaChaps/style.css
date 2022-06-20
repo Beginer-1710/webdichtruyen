@@ -1,0 +1,159 @@
+.showMangaChaps{
+    background-color: #e5e8ea;
+    display: flex;
+    justify-content: center;
+}
+
+.showMangaChaps-container{
+    margin-top: 15px;
+    max-width: 1200px;
+    width: 100%;
+    display: flex;
+}
+
+.showMangaChaps-left{
+    flex: 52%;
+    font-size: 12px;
+}
+
+.borderBottom{
+    border-bottom: solid 1px #eee;
+}
+
+.chapItemAria{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.chapItemLocation{
+    flex: 33.3333%;
+    display: flex;
+    align-items: center;
+    padding: 18px 0px;
+}
+
+.chapItemLocationMidle{
+    justify-content: center;
+}
+
+
+.showMangaChaps-main_header{
+    font-size: 11px;
+    font-weight: bold;
+}
+
+.chapItemLocation span{
+    margin-right: 6px;
+}
+
+.bold{
+    font-weight: bold;
+}
+
+.showMangaChaps-main{
+    border: solid 1px #e3e3e3;
+    background-color: white;
+    border-radius: 6px;
+    padding: 15px 0px 0px 15px;
+}
+
+.showMangaChaps-main_chaps{
+    max-height: 587px;
+    overflow-y: scroll;
+}
+
+.chap-item:hover .chap-item_tittle{
+    color: #288ad6;
+}
+
+.chapItemLocation-icon{
+    cursor: pointer;
+}
+
+
+
+.showMangaChaps-right{
+    margin-left: 25px;
+    flex: 1;
+}
+
+.showMangaChaps-right .listLikeGenre{
+    margin-top: 0;
+}
+
+.showMangaChaps-right .listLikeGenre-content{
+    border: solid 1px #e3e3e3;
+    background-color: white;
+    border-radius: 6px;
+}
+
+@media screen and (min-width : 860px) and (max-width : 1200px){
+    .showMangaChaps-container{
+        max-width: 860px;
+    }
+    .showMangaChaps-left{
+        flex: 40%;
+    }
+}
+
+@media screen and (min-width : 550px) and (max-width : 859px){
+    .showMangaChaps-container{
+        flex-direction: column;
+    }
+    .showMangaChaps-right{
+        flex: 100%;
+        margin: 50px 0px 50px 0px ;
+    }
+    .showMangaChaps-right .listLikeGenre{
+        padding: 0;
+    }
+
+    .showMangaChaps-right .listLikeGenre-content{
+        display: flex;
+        flex-wrap: wrap;
+    }
+    .showMangaChaps-right .listLikeGenre-content .itemListMostView{
+        flex: 50%;
+    }
+    .showMangaChaps-right .itemListMostView-img{
+        height: 220px;
+    }
+    .showMangaChaps-main{
+        min-height: 645px;
+        height: 100%;
+    }
+}
+
+@media screen and (max-width : 549px){
+    .showMangaChaps-container{
+        flex-direction: column;
+    }
+    .showMangaChaps-right{
+        flex: 100%;
+        margin: 50px 0px 50px 0px ;
+    }
+    .showMangaChaps-right .listLikeGenre{
+        padding: 0;
+    }
+    
+    .showMangaChaps-right .listLikeGenre-content{
+        display: flex;
+        flex-wrap: wrap;
+    }
+    .showMangaChaps-right .listLikeGenre-content .itemListMostView{
+        flex: 50%;
+    }
+    .showMangaChaps-right .itemListMostView-img{
+        height: 150px;
+    }
+
+    .showMangaChaps-right .itemListMostView button,
+    .showMangaChaps-right .itemListMostView span{
+        font-size: 10px;
+    }
+    .showMangaChaps-main{
+        min-height: 645px;
+        height: 100%;
+    }
+}

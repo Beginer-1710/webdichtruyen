@@ -1,0 +1,206 @@
+.HeaderDetailPage{
+    margin-top: 73px;
+    background-image: url("https://assets.dichtruyenvip.com/assets/images/bg_lowpoly.png");
+    min-height: 550px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px 0px;
+}
+
+.HeaderDetailPage-container{
+    max-width: 1200px;
+    width: 100%;
+    height: 100%;
+    padding: 10px;
+    display: flex;
+    background-color: white;
+}
+
+.HeaderDetailPage-img{
+    width: 350px;
+    height: 500px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    border-radius: 6px;
+    overflow: hidden;
+}
+
+.HeaderDetailPage-img button{
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 12px;
+    font-weight: 700px;
+    padding: 0px 50px;
+    margin: 0px 5px 20px 5px;
+}
+
+.HeaderDetailPage-img_Icon{
+    width: 14px !important;
+    height: 14px !important;
+}
+
+.HeaderDetailPage-img_faceShare{
+    background-color: #4c67a1;
+    border-radius: 6px;
+    border: 3px solid #0faed1;
+}
+
+.HeaderDetailPage-img_likeButton{
+    background-color: #9c1f66;
+    border-radius: 6px;
+    border: 3px solid #de3592cc;
+}
+
+.HeaderDetailPage-img_buttons{
+    padding-top: 20px;
+    width: 100%;
+    display: flex;
+    background: linear-gradient( 0deg,rgba(0,0,0,1) 0%,rgba(0,0,0,0.6208858543417367) 80%,rgba(0,0,0,0) 100% );
+}
+
+.HeaderDetailPage-mangaInfor_view{
+    display: flex;
+}
+
+.marginLef-11px{
+    margin-left: 11px;
+}
+
+.HeaderDetailPage-mangaInfor{
+    flex: 1;
+    margin-left: 40px;
+}
+
+.HeaderDetailPage-mangaInfor h1{
+    font-size: 30px;
+    font-weight: 600;
+    margin: 10px 20px;
+}
+
+.HeaderDetailPage-mangaInfor_status span{
+    color: #0056b3;
+}
+
+.mangaAuthorList{
+    display: flex;
+}
+
+
+.AuthorItem{
+    margin-left: 20px;
+    color: #0056b3;
+}
+
+.TypeMangaList{
+    display: flex;
+}
+
+
+.SpaceLeftInfor{
+    flex: 1;
+    min-width: 75px;
+}
+
+.List-container{
+    display: flex;
+    flex-wrap: wrap;
+    flex: 80%;
+}
+
+.marginLeft-20px{
+    margin-left: 20px;
+}
+
+.TypeMangaList-item{
+    margin-left: 20px;
+}
+
+.MangaDescription{
+    position: relative;
+    padding: 20px;
+    margin-left: 20px;
+    font-size: 14px;
+}
+.MangaDescription::after{
+    content: "";
+    position: absolute;
+    height: 100%;
+    width: 5px;
+    left: 0;
+    top: 0;
+    background-color: #0056b3;
+}
+
+.marginInfor{
+    margin: 20px 20px;
+}
+
+.HeaderDetailPage-mangaInfor_rating{
+    display: flex;
+    align-items: center;
+}
+.ratingIcon{
+    color: yellow;
+}
+
+.adultWarning{
+    background-color: #ffd6d6;
+    color: #a94442;
+    border: solid 1px #07c2eb;
+    margin:0px 20px;
+    padding: 10px;
+    border-radius: 6px;
+}
+
+.adultWarning p span{
+    font-weight: bold !important;
+}
+
+.iconWarning{
+    width: 16px !important; 
+    height: 16px !important;
+}
+
+.ItemList{
+    margin: 0px 0px 10px 10px;
+    border: solid 1px #07c2eb;
+    background-color: #0056b3;
+    border-radius: 50px;
+    padding: 4px 10px;
+    color: white;
+    font-weight: 600;
+    font-size: 13px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+@media screen and (min-width : 800px) and (max-width : 1200px) {
+    .HeaderDetailPage-container{
+        max-width: 860px;
+    }
+    .HeaderDetailPage-img{
+        width: 300px;
+        height: 450px;
+    }
+}
+
+@media screen and (max-width : 799px){
+    .HeaderDetailPage-container{
+        max-width: 700px;
+        flex-direction: column;
+        align-items: center;
+    }
+    .HeaderDetailPage-mangaInfor{
+        margin: 0;
+        justify-content: center;
+    }
+}

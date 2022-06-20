@@ -1,0 +1,149 @@
+.home-containerMain{
+    width: 100%;
+    padding: 40px 0px;
+    /* min-width: 4960px; */
+    
+}
+
+
+.home-contnetMain{
+    max-width: 1200px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+
+.home-contnetMain_left{
+    flex: 52%;
+    margin-right: 20px;
+}
+
+.home-contnetMain_right{
+    flex : 1;
+}
+
+.item_change{
+    flex: 25%;
+    margin-bottom: 15px;
+    padding-right: 15px;
+}
+
+.item_change .itemManga{
+    width: 100% !important;
+}
+
+.item_change .itemManga-img{
+    height: 340px !important;
+}
+
+.item_change .item-update,
+.item_change .item-tittle{
+    color: black ;
+}
+
+
+.home-listManga{
+    display: flex;
+    flex-wrap: wrap;
+    border: solid 1px #e3e3e3;
+    border-radius: 6px;
+    padding: 16px 0px 16px 16px;
+}
+
+.home-pagination{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 16px;
+}
+
+.home-pagination .MuiPagination-ul li button{
+    margin-right: 10px !important;
+}
+
+/* -------------------------------------------------------------------------- */
+@media screen and (min-width : 860px) and (max-width : 1200px){
+    .home-contnetMain{
+        max-width: 860px;
+        padding: 0px 14px;
+    }
+
+    .item_change{
+        flex: 33.333%;
+    }
+
+    .home-contnetMain_left{
+        flex: 45%;
+    }
+
+    .home-contnetMain_right .listLikeGenre-content .itemListMostView-img{
+        height: 160px !important;
+    }
+}
+
+@media screen and (min-width : 550px) and (max-width : 859px){
+    .home-contnetMain{
+        max-width: 700px;
+        padding: 0px 14px;
+    }
+    .item_change{
+        display: flex;
+        justify-content: center;
+        flex: 50%;
+        padding: 0;
+        margin-bottom: 30px;
+    }
+    .home-contnetMain{
+        flex-direction: column;
+    }
+
+    .home-contnetMain_right .listLikeGenre-content{
+        display: flex;
+        flex-wrap: wrap;
+    }
+    .home-contnetMain_right .listLikeGenre-content .itemListMostView{
+        flex: 50%;
+    }
+    .home-contnetMain_right .itemListMostView-img{
+        height: 220px;
+    }
+    .home-contnetMain_right{
+        margin-right: 20px;
+    }
+
+    .home-contnetMain_left{
+        margin: 0;
+    }
+}
+
+@media screen and (max-width : 549px){
+    .item_change{
+        display: flex;
+        justify-content: center;
+        flex: 100%;
+        padding: 0;
+        margin-bottom: 30px;
+    }
+    .home-contnetMain{
+        flex-direction: column !important;
+    }
+    .home-contnetMain_right .listLikeGenre-content{
+        display: flex;
+        flex-wrap: wrap;
+    }
+    .home-contnetMain_right .listLikeGenre-content .itemListMostView{
+        flex: 50%;
+    }
+    .home-contnetMain_right .itemListMostView-img{
+        height: 150px;
+    }
+
+    .home-contnetMain_right .itemListMostView button,
+    .home-contnetMain_right .itemListMostView span{
+        font-size: 10px;
+    }
+    .home-contnetMain_left{
+        margin: 0;
+    }
+}

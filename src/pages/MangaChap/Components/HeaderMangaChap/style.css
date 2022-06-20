@@ -1,0 +1,83 @@
+.headerMangaChap{
+    width: 100%;
+    height: 50px;
+    background-color: #222;
+    
+    position: fixed;
+    top: 73px;
+    left: 0;
+    right: 0;
+    border-bottom: 1px solid #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    transition: 0.25s all ease;
+}
+
+.headerMangaChap-container{
+    max-width: 1200px;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    color: white;
+}
+
+.headerMangaChapIcon{
+    width: 35px !important;
+    height: 35px !important;
+    cursor: pointer;
+}
+
+.headerMangaChap-button a{
+    text-decoration: none;
+    color: white;
+}
+
+.headerMangaChapIcon-disable{
+    width: 35px !important;
+    height: 35px !important;
+    color: #c2c5c7;
+    cursor: auto;
+}
+
+.headerManga-menuChap{
+    position: absolute;
+    background-color: white;
+    max-width: 400px;
+    width: 100%;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    list-style: none;
+    max-height: 300px;
+    overflow-y: scroll;
+    height: 0px;
+    transition: 1s all ease;
+}
+
+
+.headerManga-menuChap_item{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: black;
+    width: 100%;
+    height: 25px;
+    font-size: 14px;
+    border-bottom: solid 1px #e3e3e3;
+    cursor: pointer;
+}
+
+.headerManga-menuChap_itemCurrent{
+    background-color: #187d8b;
+    color: white;
+}
+.headerManga-menuChap_item:hover{
+    background-color: #187d8b;
+    color: white;
+}
+
+.headerManga-menuChap a{
+    outline: none;
+}

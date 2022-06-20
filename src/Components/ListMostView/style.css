@@ -1,0 +1,12 @@
+.listLikeGenre{
+    margin-top: 20px;
+}
+
+.listLikeGenre-content{
+    padding: 15px 0px 15px 15px !important;
+}
+
+
+.listLikeGenre-content a{
+    color: black;
+}
