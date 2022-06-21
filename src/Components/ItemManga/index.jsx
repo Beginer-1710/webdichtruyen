@@ -16,7 +16,7 @@ function ItemManga(props) {
     const {item} = props;
     const randomNumberSeen = Math.floor(Math.random() * 10000000);
     const randomNumberLike = Math.floor(Math.random() * 100000);
-    const day = item?.lastUpdate.split(" ")[0];
+    const day = item?.lastUpdate.split(" ")[0].split("-").reverse().join("/");
     const urlImge = item?.cover;
 
     const currentLink = useNavigate();

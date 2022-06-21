@@ -2,20 +2,22 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import './style.css'
 
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 ItemLikeGenre.propTypes = {
     
 };
 
 function ItemLikeGenre(props) {
     const {item = {}} = props;
-    console.log(item,"heheheheheheh");
+
+    const CurrentUrl = useNavigate()
+    const handleClickItem = () => {
+        CurrentUrl(`/type/genre=${item.genre}`)
+    }
     return (
-        <Link to={`/type/genre=${item.genre}`}>
-            <div className='itemLikeGenre' style={{backgroundImage : `url(${item.imgUrl})`}}>
+            <div className='itemLikeGenre' style={{backgroundImage : `url(${item.imgUrl})`}} onClick={handleClickItem}>
                 <div className='itemLikeGenre-nameGenre'>{item.nameGenre}</div>
             </div>
-        </Link>
     );
 }
 

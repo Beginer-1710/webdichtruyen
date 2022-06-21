@@ -1,12 +1,24 @@
 .itemListMostView{
     border-bottom: solid 1px #f0f0f0;
     margin-bottom: 30px;
+    cursor: pointer;
 }
 
 .itemListMostView span{
-    font-size: 13px !important;
+    font-size: 12px !important;
     font-weight: 700 !important;
     margin-bottom: 5px !important;
+
+    
+}
+
+.itemListMostView-tittle_Manga{
+    line-height: 12px;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    display: -webkit-box;
+    overflow: hidden;
+    word-wrap: normal;
 }
 
 .itemListMostView-img{
@@ -63,4 +75,13 @@
 .itemListMostView:hover .itemListMostView-content button{
     background-color: #0faed1;
     color: white;
+}
+
+@media screen and (min-width : 860px) and (max-width : 1200px) {
+    .itemListMostView-itemInfor span{
+        font-size: 10px !important;
+    }
+    .itemListMostView-itemInfor{
+        margin-bottom: 8px;
+    }
 }
