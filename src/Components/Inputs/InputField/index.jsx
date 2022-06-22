@@ -24,6 +24,7 @@ function InputField(props) {
                 variant="outlined" 
                 label = {label}
                 error = {!!isError}
+                margin="normal"
                 helperText = {errors[name]?.message}
                 />
             )}
