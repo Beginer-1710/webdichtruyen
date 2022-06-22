@@ -68,7 +68,7 @@ function Home(props) {
             page : page
         }))
 
-        CurrnetLink(`/page=${page}`)
+        CurrnetLink(`/webdichtruyen/page=${page}`)
     }
 
     console.log(isComplete);

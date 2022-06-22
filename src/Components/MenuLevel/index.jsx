@@ -10,7 +10,7 @@ function MenuLevel(props) {
     const {listGenres , number , index ,onCloseMenu} = props;
     const currentUrl = useNavigate();
     const handleOnclickItem = (genreEP) => {
-        currentUrl(`/type/${genreEP}`)
+        currentUrl(`/webdichtruyen/type/${genreEP}`)
         if(onCloseMenu)
         onCloseMenu();
     }

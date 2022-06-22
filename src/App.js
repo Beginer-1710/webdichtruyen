@@ -15,12 +15,12 @@ function App() {
     <>
       <Header />
         <Routes>
-          <Route path='/' element={<Home />}/>
-          <Route path='/:pageId' element={<Home />}/>
-          <Route path='/type/:TypeManga' element={<TypePage />}/>
-          <Route path='/detail/:mangaId' element={<DetailPage />} />
-          <Route path='/manga/:mangaName/:mangaChap' element={<MangaChap />} />
-          <Route path='/follow' element={<FollowManga />} />
+          <Route path='/webdichtruyen' element={<Home />}/>
+          <Route path='/webdichtruyen/:pageId' element={<Home />}/>
+          <Route path='/webdichtruyen/type/:TypeManga' element={<TypePage />}/>
+          <Route path='/webdichtruyen/detail/:mangaId' element={<DetailPage />} />
+          <Route path='/webdichtruyen/manga/:mangaName/:mangaChap' element={<MangaChap />} />
+          <Route path='/webdichtruyen/follow' element={<FollowManga />} />
         </Routes>
       <Footer />
     </>

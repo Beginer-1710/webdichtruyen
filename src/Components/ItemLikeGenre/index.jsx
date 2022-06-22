@@ -12,7 +12,7 @@ function ItemLikeGenre(props) {
 
     const CurrentUrl = useNavigate()
     const handleClickItem = () => {
-        CurrentUrl(`/type/genre=${item.genre}`)
+        CurrentUrl(`/webdichtruyen/type/genre=${item.genre}`)
     }
     return (
             <div className='itemLikeGenre' style={{backgroundImage : `url(${item.imgUrl})`}} onClick={handleClickItem}>

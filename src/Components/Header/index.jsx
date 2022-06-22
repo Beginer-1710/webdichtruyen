@@ -132,7 +132,7 @@ function Header(props) {
 
     const UrlCurrent = useNavigate();
     const handleGotoFollow = () =>{
-        UrlCurrent('/follow')
+        UrlCurrent('/webdichtruyen/follow')
     }
     return (
        <>
@@ -166,7 +166,7 @@ function Header(props) {
             <div className='header-flow2'>
                 <div className='header-flow2_content'>
                     <div className='header-flow2_left'>
-                        <a href="/" className='header-mainLogo'>
+                        <a href="/webdichtruyen" className='header-mainLogo'>
                             <img src="https://assets.dichtruyenvip.com/assets/images/logo-1.png" alt="logoPage" />
                         </a>
                         <div className='header-flow2_buttonMenu header-button_type'>
@@ -183,7 +183,7 @@ function Header(props) {
                         <div className='header-flow2_buttonMenu header-button_type'>
                             Xếp hạng
                             <ArrowDropDownRoundedIcon />
-                            <MenuLevel listGenres={levelListManga} number={3} index={2}/>
+                            <MenuLevel listGenres={levelListManga} number={3} index={isHadLogin ? 2 : 1}/>
                         </div >
                     </div>
                     <div className='header-flow2_right'>
@@ -210,7 +210,7 @@ function Header(props) {
         {/* --------------------------------------------------------------------------------------------- */}
         <div className='header-responsive'>
             <div className='header-responsive_content'>
-                <a href="/" className='headerResponsive-mainLogo'>
+                <a href="/webdichtruyen" className='headerResponsive-mainLogo'>
                     <img src="https://assets.dichtruyenvip.com/assets/images/logo-1.png" alt="logoPage" />
                 </a>
                 <div className='header-responsive_buttons'>
@@ -248,11 +248,12 @@ function Header(props) {
                                 Thể loại
                                     <ArrowDropDownRoundedIcon />
                             </div>
-                            <div className='header-responsive_buttonMenu' onClick={ToggleResponMenu}>
-                                <Link to="/follow">
+                            {
+                                isHadLogin ? (
+                                <div className='header-responsive_buttonMenu' onClick={handleGotoFollow}>                   
                                     Yêu Thích
-                                </Link>
-                            </div>
+                                </div> ) : <></>
+                            }
                             <div className='header-responsive_buttonMenu' onClick={ShowMenuLevel}>
                                     Thể Loại
                                     <ArrowDropDownRoundedIcon />

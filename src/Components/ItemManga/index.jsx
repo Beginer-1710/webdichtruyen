@@ -21,7 +21,7 @@ function ItemManga(props) {
 
     const currentLink = useNavigate();
     const handleOnclickItem = () => {
-        currentLink(`/detail/${item?.mangaEP}`)
+        currentLink(`/webdichtruyen/detail/${item?.mangaEP}`)
     }
     return (    
             <div className='itemManga' onClick={handleOnclickItem}>

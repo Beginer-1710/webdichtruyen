@@ -45,7 +45,7 @@ function ShowMangaChaps(props) {
                         <div className='showMangaChaps-main_chaps'>
                             {
                                 data.map((item) => (
-                                    <Link to={`/manga/${mangaName}/${item.chapEP}`} >
+                                    <Link to={`/webdichtruyen/manga/${mangaName}/${item.chapEP}`} >
                                         <div className='chap-item borderBottom chapItemAria'>
                                             <div className='chap-item_tittle chapItemLocation bold'>{item?.chapTitle}</div>
                                             <div className='chapItemLocation chapItemLocationMidle'>{item?.chapTime}</div>

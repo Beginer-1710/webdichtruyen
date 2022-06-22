@@ -19,7 +19,7 @@ function ItemListMostView(props) {
 
     const CurrentUrl = useNavigate();
     const handleClickItem = () => {
-        CurrentUrl(`/detail/${item.mangaEP}`);
+        CurrentUrl(`/webdichtruyen/detail/${item.mangaEP}`);
     }
     return (
     //    <Link to={`/detail/${item.mangaEP}`}>
