@@ -1,6 +1,14 @@
-import React, { useEffect, useState } from 'react';
+import React, { useCallback, useEffect, useMemo, useState } from 'react';
 import PropTypes from 'prop-types';
 import './style.css'
+
+import Button from '@mui/material/Button';
+import TextField from '@mui/material/TextField';
+import Dialog from '@mui/material/Dialog';
+import DialogActions from '@mui/material/DialogActions';
+import DialogContent from '@mui/material/DialogContent';
+import DialogContentText from '@mui/material/DialogContentText';
+import DialogTitle from '@mui/material/DialogTitle';
 
 
 import MailOutlineIcon from '@mui/icons-material/MailOutline';
@@ -15,6 +23,13 @@ import MenuIcon from '@mui/icons-material/Menu';
 import SearchIcon from '@mui/icons-material/Search';
 import CloseIcon from '@mui/icons-material/Close';
 import MenuLevel from '../MenuLevel';
+
+import { useSelector, useDispatch } from 'react-redux'
+import Register from '../../pages/Login/Register'
+import Login from '../../pages/Login/Login';
+import AccountCircleIcon from '@mui/icons-material/AccountCircle';
+import { logOut } from '../../pages/Login/userSlice';
+import { Link, useNavigate } from 'react-router-dom';
 Header.propTypes = {
     
 };
@@ -30,7 +45,6 @@ function Header(props) {
     const ShowMenuGenre = () => {
         setShowMenuGenre(true);
         setShowResponMenu(x => !x);
-
     }
     const CloseMenuGenre = () => {
         setShowMenuGenre(false);
@@ -84,6 +98,42 @@ function Header(props) {
 
 
 
+    const [open, setOpen] = React.useState(false);
+
+    const handleClickOpen = () => {
+        setOpen(true);
+    };
+
+    const handleClose = (even , respon) => {
+        if(respon !== "escapeKeyDown" && respon !== "backdropClick")
+        setOpen(false);
+    };
+
+    const [isLogin , setIsLogin] = useState(true);
+    const handleChangeLogin = () => {
+        setIsLogin(x => !x);
+    }
+
+
+    const userState = useSelector(state => state.user);
+    const isHadLogin = userState?.current.id;
+
+    const [showSmallMenuLogin, setShowSmallMenuLogin] = useState(false);
+    const handleShowSmallMenuLogin = () => {
+        setShowSmallMenuLogin(x => !x)
+    }
+
+    const dispatch = useDispatch();
+    const handleLogOut = () => {
+        const action = logOut();
+        dispatch(action);
+        handleShowSmallMenuLogin();
+    }
+
+    const UrlCurrent = useNavigate();
+    const handleGotoFollow = () =>{
+        UrlCurrent('/follow')
+    }
     return (
        <>
          <div className="header">
@@ -98,7 +148,9 @@ function Header(props) {
                     </div>
                     
                     <div className='header-login_page'>
-                        <div className='header-pageLogin'>Đăng nhập</div>
+                        {
+                            isHadLogin ? <></> : <div className='header-pageLogin' onClick={handleClickOpen}>Đăng nhập</div>
+                        }
                         <div className='header-pageInfor'>
                             <FacebookIcon className='header-Icon_mediumSize'/>
                             <p>Fanpage: DichTruyen.NET</p>
@@ -122,28 +174,62 @@ function Header(props) {
                             <ArrowDropDownRoundedIcon />
                             <MenuGenre listGenres={genre} number={4} index={0}/>
                         </div>
-                        <div className='header-flow2_buttonMenu'>
-                            Nhóm dịch
-                            <ArrowDropDownRoundedIcon />
-                        </div>
+                        {
+                            isHadLogin ? (
+                            <div className='header-flow2_buttonMenu' onClick={handleGotoFollow}>
+                            Yêu thích
+                            </div>) : <></>
+                        }
                         <div className='header-flow2_buttonMenu header-button_type'>
                             Xếp hạng
                             <ArrowDropDownRoundedIcon />
                             <MenuLevel listGenres={levelListManga} number={3} index={2}/>
                         </div >
-                        <div className='header-flow2_buttonMenu'>Lịch sử</div>
+                    </div>
+                    <div className='header-flow2_right'>
+                        {
+                            isHadLogin ? 
+                            (
+                                <>
+                                    <AccountCircleIcon className='IconUser' onClick={handleShowSmallMenuLogin}/>
+                                    {
+                                        showSmallMenuLogin && 
+                                        <ul className='login-smallMenu'>
+                                            <li onClick={handleLogOut}>Đăng xuất</li>
+                                        </ul>
+                                    }
+                                </>
+                            )
+                            : <></>
+                        }
                     </div>
                 </div>
             </div>
+
         </div>
         {/* --------------------------------------------------------------------------------------------- */}
         <div className='header-responsive'>
             <div className='header-responsive_content'>
-                <a href="#" className='headerResponsive-mainLogo'>
+                <a href="/" className='headerResponsive-mainLogo'>
                     <img src="https://assets.dichtruyenvip.com/assets/images/logo-1.png" alt="logoPage" />
                 </a>
                 <div className='header-responsive_buttons'>
-                    <button>Đăng nhập</button>
+                    {
+                        isHadLogin ? 
+                        (
+                            <>
+                                <AccountCircleIcon className='IconUser' onClick={handleShowSmallMenuLogin}/>
+                                {
+                                    showSmallMenuLogin && 
+                                    <ul className='login-smallMenu'>
+                                        <li onClick={handleLogOut}>Đăng xuất</li>
+                                    </ul>
+                                }
+                            </>
+                        )
+                        : <button onClick={handleClickOpen}>Đăng nhập</button>
+                    }
+                    
                     <SearchIcon className='header-responsive_searchIcon'/>
                     <div onClick={ToggleResponMenu}>
                         {
@@ -162,15 +248,15 @@ function Header(props) {
                                 Thể loại
                                     <ArrowDropDownRoundedIcon />
                             </div>
-                            <div className='header-responsive_buttonMenu'>
-                                Nhóm dịch
-                                <ArrowDropDownRoundedIcon />
+                            <div className='header-responsive_buttonMenu' onClick={ToggleResponMenu}>
+                                <Link to="/follow">
+                                    Yêu Thích
+                                </Link>
                             </div>
                             <div className='header-responsive_buttonMenu' onClick={ShowMenuLevel}>
-                                Xếp hạng
-                                <ArrowDropDownRoundedIcon />
+                                    Thể Loại
+                                    <ArrowDropDownRoundedIcon />
                             </div >
-                            <div className='header-responsive_buttonMenu'>Lịch sử</div>
                         </div>
                     )
                 }
@@ -186,7 +272,7 @@ function Header(props) {
                                     <CloseIcon />
                                 </div>
                             </div>    
-                            <MenuGenre listGenres={genre} number={3} />
+                            <MenuGenre listGenres={genre} number={3} onCloseMenu={CloseMenuGenre}/>
                         </div>
                         </div>
                     )
@@ -203,7 +289,7 @@ function Header(props) {
                                     <CloseIcon />
                                 </div>
                             </div>    
-                            <MenuLevel listGenres={levelListManga} number={3}/>
+                            <MenuLevel listGenres={levelListManga} number={3} onCloseMenu={CloseMenuLevel}/>
                         </div>
                         </div>
                     )
@@ -214,6 +300,30 @@ function Header(props) {
         </div>
 
         
+
+
+        <Dialog open={open} onClose={handleClose}>
+        <DialogContent>
+          {
+            isLogin ? (
+                <>
+                    <Login onCloseMenuLogin={handleClose}/>
+                    <p className='title-formLogin' onClick={handleChangeLogin}>You don't have account ? <span>Register here</span> !!</p>
+                </>
+            )
+            :
+            (
+                <>
+                    <Register onCloseMenuLogin={handleClose}/>
+                    <p className='title-formLogin' onClick={handleChangeLogin}>You already have account ? <span>Login here</span> !!</p>
+                </>
+            )
+          }
+        </DialogContent>
+        <DialogActions>
+          <Button onClick={handleClose}>Cancel</Button>
+        </DialogActions>
+      </Dialog>
        </>
     );
 }

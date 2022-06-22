@@ -5,11 +5,16 @@ import FavoriteIcon from '@mui/icons-material/Favorite';
 import StarIcon from '@mui/icons-material/Star';
 import WarningIcon from '@mui/icons-material/Warning';
 import './style.css'
+import { Link, useParams } from 'react-router-dom';
+import { addMangaLove } from '../../pages/DetailManga/LoveMangaSlice';
+import { useDispatch, useSelector } from 'react-redux';
+import { useSnackbar } from 'notistack';
 HeaderDetailPage.propTypes = {
     
 };
 
 function HeaderDetailPage(props) {
+    const { enqueueSnackbar } = useSnackbar();
     const {data} = props;
     let authors;
     if(data?.author){
@@ -20,6 +25,35 @@ function HeaderDetailPage(props) {
     }
     const genres = data?.genres || [];
     const isAdult = genres.includes("Adult") || genres.includes("Ecchi");
+
+
+
+
+    const nameLink = useParams();
+    const dispatch = useDispatch();
+    const handleFollowManga = () => {
+        const payload = {
+            title : data?.title,
+            cover : data?.cover,
+            mangaEP : nameLink.mangaId,
+            lastChap : `chapter ${data.chapsTotal}`,
+            lastUpdate : data.lastUpdate
+        }
+        if(payload.cover == undefined)
+        {
+            enqueueSnackbar("Có lỗi khi thêm vào danh sách , vui lòng thử lại",{variant:"error"})
+        }
+       else{
+        const action = addMangaLove(payload);
+        dispatch(action);
+        enqueueSnackbar("Đã thêm truyện vào danh sách yêu thích của bạn",{variant:"success"})
+       }
+    }
+    const paramManga = useSelector(state => state.user);
+    const isLogin = paramManga.current.id || null;
+    const handleLogin = () =>{
+        enqueueSnackbar("Bạn cần đăng nhập để follow truyện tranh!!",{variant:"info"})
+    }
     return (
         <div className='HeaderDetailPage'>
             <div className='HeaderDetailPage-container'>
@@ -29,7 +63,7 @@ function HeaderDetailPage(props) {
                             <FacebookIcon className='HeaderDetailPage-img_Icon'/>
                             <span>Chia sẻ</span>
                         </button>
-                        <button className='HeaderDetailPage-img_likeButton'>
+                        <button className='HeaderDetailPage-img_likeButton' onClick={isLogin ? handleFollowManga : handleLogin}>
                             <FavoriteIcon className='HeaderDetailPage-img_Icon'/>
                             <span>Theo dõi</span>
                         </button>

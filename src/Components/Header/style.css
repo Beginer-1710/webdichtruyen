@@ -100,6 +100,9 @@
 }
 .header-flow2_content{
     width: 1200px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .header-mainLogo{
@@ -137,6 +140,41 @@
     display: flex;
 }
 
+.header-flow2_right{
+    position: relative;
+    height: 100%;
+}
+
+.login-smallMenu{
+    position: absolute;
+    list-style: none;
+    top : 35px;
+    right: -70px;
+    background-color: white;
+    color: black;
+    width: 150px;
+    border-radius: 6px;
+    overflow: hidden;
+}
+
+.login-smallMenu li{
+    padding: 10px 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.login-smallMenu li:hover{
+    background-color: #6629f9 !important;
+    color: white;
+    cursor: pointer;
+}
+
+.IconUser{
+    cursor: pointer;
+}
 
 /* ---------------------------RESPONSIVE------------------------------------------- */
 
@@ -195,6 +233,9 @@
     margin: 0px 10px;
 }
 
+.header-responsive_buttonMenu a{
+    color: white;
+}
 
 
 /* Moblie */
@@ -207,6 +248,9 @@
     }
     .header-responsive{
         display: flex;
+    }
+    .login-smallMenu{
+        right: 20px;
     }
 }
 
@@ -282,4 +326,33 @@
     align-items: center;
     padding: 0px 40px;
     height: 50px;
+}
+
+.header-pageLogin{
+    cursor: pointer;
+    padding: 5px 10px;
+    border-radius: 50px;
+}
+
+.header-pageLogin:hover{
+    background-color: white;
+    color: #187d8b;
+}
+
+.title-formLogin{
+    font-size: 14px;
+}
+
+.title-formLogin span{
+    font-weight: 700;
+    color: #1877f2;
+    cursor: pointer;
+    padding: 5px 10px;
+    transition: 0.25s all ease;
+    border-radius: 50px;
+}
+
+.title-formLogin span:hover{
+    background-color: #187d8b;
+    color: white;
 }

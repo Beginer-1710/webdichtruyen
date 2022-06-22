@@ -71,3 +71,9 @@
         padding: 0px 14px;
     }
 }
+
+@media screen and (max-width : 859px) {
+    .sliderGenre{
+        margin-top: 40px;
+    }
+}

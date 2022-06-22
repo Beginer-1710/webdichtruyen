@@ -13,7 +13,7 @@ function SliderGenre(props) {
         imgUrl : imgTypePage,
         nameGenre : typeManga
     }
-    lastUpdate  = lastUpdate == undefined ? "2020-10-21 04:20:01" : lastUpdate
+    lastUpdate = lastUpdate == undefined ? "2020-10-21 04:20:01" : lastUpdate;
     const newLastUpdate = lastUpdate.split(" ")[0].split("-").reverse().join("/");
     return (
         <div className='sliderGenre'>

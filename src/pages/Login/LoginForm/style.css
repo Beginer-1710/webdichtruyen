@@ -1,0 +1,30 @@
+.loginForm .MuiAvatar-root{
+    background-color: #187d8b !important;
+}
+
+
+.loginForm .MuiTypography-root{
+    text-align: center;
+}
+
+.loginForm{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.loginForm .MuiFormControl-root{
+    width: 290px !important;
+}
+
+.loginForm .MuiButton-root{
+    margin-top: 0px !important;
+}
+
+.loginForm .css-wb57ya-MuiFormControl-root-MuiTextField-root{
+    margin-bottom: 30px !important;
+}
+
+.loginForm .css-ag7rrr-MuiTypography-root{
+    margin-bottom: 20px !important;
+}

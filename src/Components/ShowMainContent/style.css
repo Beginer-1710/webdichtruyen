@@ -24,7 +24,7 @@
 }
 
 .item_change{
-    flex: 25%;
+    flex: 25% 0;
     margin-bottom: 20px;
     padding-right: 15px;
 }

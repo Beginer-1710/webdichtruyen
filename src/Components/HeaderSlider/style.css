@@ -8,6 +8,8 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    background-size: cover;
+    background-repeat: no-repeat;
 }
 
 .slider-content{
@@ -81,6 +83,9 @@
     .slider-right{
         flex: 60%;
     }
+    .slider-container{
+        margin-top: 40px;
+    }
 }
 
 @media screen and (max-width : 739px) {
@@ -92,5 +97,8 @@
     }
     .slider-content_main{
         justify-content: center;
+    }
+    .slider-container{
+        margin-top: 40px;
     }
 }

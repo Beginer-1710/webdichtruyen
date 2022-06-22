@@ -1,19 +1,25 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Link } from 'react-router-dom';
-
+import { Link, useNavigate } from 'react-router-dom';
+import './style.css';
 MenuLevel.propTypes = {
     
 };
 
 function MenuLevel(props) {
-    const {listGenres , number , index} = props;
+    const {listGenres , number , index ,onCloseMenu} = props;
+    const currentUrl = useNavigate();
+    const handleOnclickItem = (genreEP) => {
+        currentUrl(`/type/${genreEP}`)
+        if(onCloseMenu)
+        onCloseMenu();
+    }
     return (
         <div className='menuGenre' style={{left : `-${index*118 + 170}px`}}>
             <div className='menuGenre-content'>
                 {
                     listGenres.map((genre) => (
-                        <Link to={`/type/${genre.EP}`} style={{flex: `${100/number}%`}}><p key={genre.genre || genre.genre} className="MenuGenre-item">{genre.genre}</p></Link>
+                        <p onClick={() => {handleOnclickItem(genre.EP)}} style={{flex: `${100/number}%`}} key={genre.genre || genre.genre} className="MenuGenre-item">{genre.genre}</p>
                     ))
                 }
             </div>

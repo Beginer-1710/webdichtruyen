@@ -50,12 +50,14 @@
     background-color: #4c67a1;
     border-radius: 6px;
     border: 3px solid #0faed1;
+    cursor: pointer;
 }
 
 .HeaderDetailPage-img_likeButton{
     background-color: #9c1f66;
     border-radius: 6px;
     border: 3px solid #de3592cc;
+    cursor: pointer;
 }
 
 .HeaderDetailPage-img_buttons{
@@ -191,6 +193,9 @@
         width: 300px;
         height: 450px;
     }
+    .HeaderDetailPage{
+        margin-top: 40px;
+    }
 }
 
 @media screen and (max-width : 799px){
@@ -202,5 +207,8 @@
     .HeaderDetailPage-mangaInfor{
         margin: 0;
         justify-content: center;
+    }
+    .HeaderDetailPage{
+        margin-top: 40px;
     }
 }

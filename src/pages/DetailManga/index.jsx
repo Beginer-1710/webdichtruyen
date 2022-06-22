@@ -23,8 +23,11 @@ function DetailPage(props) {
             setInforManga(respone.data.data);
             setIsComplete(true);
         })()
-    },[])
-    console.log(inforManga);
+        return () => {
+            setIsComplete(false);
+        }
+    },[mangaName])
+    console.log(inforManga,"inforManga");
     return (
         <div className='detailPage'>
             <HeaderDetailPage data={inforManga}/>

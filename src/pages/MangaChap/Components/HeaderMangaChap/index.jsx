@@ -37,6 +37,7 @@ function HeaderMangaChap(props) {
 
     var lastScrollTop = useRef();
     const navBar = useRef(0);
+    let widthWindow ;
     useEffect(() => {
         window.addEventListener('scroll' , () => {
             var scrollTop = window.pageYOffset || document.documentElement.scrollTop;
@@ -51,11 +52,17 @@ function HeaderMangaChap(props) {
                 handleCloseMenuChap();
             }
             else{
-                navBar.current.style.top = "73px"
+                if(window.innerWidth < 1200)
+                {
+                    navBar.current.style.top = "40px"
+                }
+                else{
+                    navBar.current.style.top = "73px"
+                }
             }
             lastScrollTop.current = scrollTop;
         })
-    },[])
+    },[window.innerWidth])
     
     // useEffect(() => {
     //     const CloseClick = (e) => {

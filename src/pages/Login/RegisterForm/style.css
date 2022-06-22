@@ -1,0 +1,30 @@
+.registerForm .MuiAvatar-root{
+    background-color: #187d8b !important;
+}
+
+
+.registerForm .MuiTypography-root{
+    text-align: center;
+}
+
+.registerForm{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.registerForm .css-r47a1p-MuiFormControl-root{
+    margin: 0px !important;
+}
+
+.registerForm .css-wb57ya-MuiFormControl-root-MuiTextField-root{
+    margin-bottom: 30px !important;
+}
+
+.registerForm .css-ag7rrr-MuiTypography-root{
+    margin-bottom: 20px !important;
+}
+
+.registerForm .css-1vhaqj4-MuiButtonBase-root-MuiButton-root{
+    margin-top: 0px;
+}
