@@ -256,7 +256,7 @@ function Header(props) {
                                 </div> ) : <></>
                             }
                             <div className='header-responsive_buttonMenu' onClick={ShowMenuLevel}>
-                                    Thể Loại
+                                    Xếp hạng
                                     <ArrowDropDownRoundedIcon />
                             </div >
                         </div>
