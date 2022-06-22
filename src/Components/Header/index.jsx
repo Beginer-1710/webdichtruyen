@@ -132,6 +132,7 @@ function Header(props) {
 
     const UrlCurrent = useNavigate();
     const handleGotoFollow = () =>{
+        ToggleResponMenu()
         UrlCurrent('/webdichtruyen/follow')
     }
     return (

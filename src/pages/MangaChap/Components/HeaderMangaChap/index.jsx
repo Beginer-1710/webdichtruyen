@@ -94,13 +94,13 @@ function HeaderMangaChap(props) {
                     <WarningIcon className='headerMangaChapIcon' onClick={handleOnclickWarning}/>
                 </div>
                 <div className='headerMangaChap-button'>
-                    <Link to={`/detail/${mangaName}`}><ViewListIcon className='headerMangaChapIcon'/></Link>
+                    <Link to={`/webdichtruyen/detail/${mangaName}`}><ViewListIcon className='headerMangaChapIcon'/></Link>
                 </div>
                 <div className='headerMangaChap-button'>
                     {
                         preChap === "" ? 
                         <ArrowBackIcon className='headerMangaChapIcon-disable' /> 
-                        : <Link to={`/manga/${mangaName}/${preChap}`}><ArrowBackIcon className='headerMangaChapIcon'/></Link>
+                        : <Link to={`/webdichtruyen/manga/${mangaName}/${preChap}`}><ArrowBackIcon className='headerMangaChapIcon'/></Link>
                     }
                 </div>
                 <div className='headerMangaChap-button IconShowMenuChapManga handleShow' onClick={handleShowMenuChap}>
@@ -112,8 +112,8 @@ function HeaderMangaChap(props) {
                                 // chapEP
                                 chapList.map((item) => (
                                         item?.chapter === currentChap ?
-                                        <Link to={`/manga/${mangaName}/${item.chapEP}`} onClick={handleCloseMenuChap}><li className='headerManga-menuChap_item headerManga-menuChap_itemCurrent'>{item?.chapter}</li></Link>
-                                        : <Link to={`/manga/${mangaName}/${item.chapEP}`} onClick={handleCloseMenuChap}><li className='headerManga-menuChap_item'>{item?.chapter}</li></Link>    
+                                        <Link to={`/webdichtruyen/manga/${mangaName}/${item.chapEP}`} onClick={handleCloseMenuChap}><li className='headerManga-menuChap_item headerManga-menuChap_itemCurrent'>{item?.chapter}</li></Link>
+                                        : <Link to={`/webdichtruyen/manga/${mangaName}/${item.chapEP}`} onClick={handleCloseMenuChap}><li className='headerManga-menuChap_item'>{item?.chapter}</li></Link>    
                                 ))
                             }
                             </ul>
@@ -136,7 +136,7 @@ function HeaderMangaChap(props) {
                     {
                         nextChap === "" ?
                         <ArrowForwardIcon className='headerMangaChapIcon-disable'/>
-                        : <Link to={`/manga/${mangaName}/${nextChap}`}><ArrowForwardIcon className='headerMangaChapIcon'/></Link>
+                        : <Link to={`/webdichtruyen/manga/${mangaName}/${nextChap}`}><ArrowForwardIcon className='headerMangaChapIcon'/></Link>
                     }
                 </div>
                 <div className='headerMangaChap-button'>

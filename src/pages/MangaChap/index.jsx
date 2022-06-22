@@ -15,6 +15,7 @@ MangaChap.propTypes = {
 function MangaChap(props) {
     
     const {mangaName , mangaChap} = useParams();
+    console.log(mangaName , mangaChap);
     const [chapManga , setChapManga] = useState({});
     const [isComplete , setIsComplete] = useState(false);
 
