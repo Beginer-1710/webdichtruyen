@@ -9,7 +9,14 @@
 a:focus-visible{
   outline: none;
 }
+::-webkit-scrollbar{
+  width: 5px;
+}
 
+::-webkit-scrollbar-thumb{
+  background-color: #187d8b;
+  border-radius: 50px;
+}
 
 body {
   margin: 0;
