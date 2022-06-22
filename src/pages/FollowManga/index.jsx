@@ -1,20 +1,32 @@
 import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import './style.css'
-import { useSelector } from 'react-redux';
 import SliderGenre from '../../Components/SliderGenre'
 import ShowMainContent from '../../Components/ShowMainContent';
+import { getListMangaFollow } from '../DetailManga/LoveMangaSlice';
+import { useDispatch, useSelector } from 'react-redux';
+import { number } from 'yup/lib/locale';
 FollowManga.propTypes = {
     
 };
 
+let numberRender = 0;
 function FollowManga(props) {
+
+    numberRender++;
+    console.log(numberRender);
+    const dispatch = useDispatch();
+    useEffect(()=>{
+        const action = getListMangaFollow();
+        dispatch(action);
+    },[])
+
     const StateInfo = useSelector(state => state)
+    console.log(StateInfo,"firstTime");
     const MangaLoveInfo = StateInfo.mangaLove;
 
     const listManga = MangaLoveInfo.listMangaLove;
     const user = MangaLoveInfo.user;
-    console.log(listManga,user);
     
 
    
@@ -26,7 +38,7 @@ function FollowManga(props) {
     const [newList , setNewList] = useState([]);
     useEffect(() => {
         setNewList(listManga.slice(param.page*24-24, param.page*24-1))
-    },[param])
+    },[param,listManga])
     console.log(listManga,"heheh");
     const handleOnchangePage = (e, page) =>{
         setParam((x) => ({
