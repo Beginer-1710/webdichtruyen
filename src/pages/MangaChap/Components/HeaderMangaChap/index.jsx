@@ -25,10 +25,8 @@ function HeaderMangaChap(props) {
     const [showMenuChap , setShowMenuChap] = useState(false);
     const handleShowMenuChap = () => {
         setShowMenuChap(x => !x)
-        console.log("hanle2");
     }
     const handleCloseMenuChap = () => {
-        console.log("handle");
         setShowMenuChap(false)
     }
     const handleOnclickWarning = () =>{

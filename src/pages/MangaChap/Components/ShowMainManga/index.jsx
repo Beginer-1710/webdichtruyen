@@ -9,7 +9,6 @@ ShowMainManga.propTypes = {
 
 function ShowMainManga(props) {
     const {data = [],  currentChap} = props;
-    console.log((data));
     const handleGoTop = () => {
         // window.pageYOffset = 0;
         // document.documentElement.scrollTop = 0;
@@ -20,8 +19,8 @@ function ShowMainManga(props) {
             <h1 className='ChapTittle'>{currentChap}</h1>
             <div className='mainManga-container'>
                 {
-                    data.map((item) => (
-                        <img src={item} alt="" />
+                    data.map((item,index) => (
+                        <img src={item} alt="" key={index}/>
                     ))
                 }
             </div>

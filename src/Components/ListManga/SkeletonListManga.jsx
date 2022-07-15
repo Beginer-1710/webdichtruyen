@@ -11,8 +11,8 @@ function SkeletonListManga(props) {
     return (
         <>
             {
-                listManga.map(() => (    
-                        <div className='item_change'>
+                listManga.map((item,index) => (    
+                        <div className='item_change' key={index}>
                             <SkeletonItemManga />
                         </div>
                 ))

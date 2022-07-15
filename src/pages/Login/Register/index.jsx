@@ -28,6 +28,7 @@ function Register(props) {
         } catch (error) {
             console.log("false to register");
             enqueueSnackbar("Đăng ký thất bại!!!",{variant:"error"})
+            console.log(error);
         }
     }
     return (

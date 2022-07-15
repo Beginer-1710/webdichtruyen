@@ -15,8 +15,8 @@ function SkeletonListItemGenre(props) {
             <span>THỂ LOẠI ĐƯỢC YÊU THÍCH</span>
             <div className='listLikeGenre-content'>
                 {
-                    listLikeGenre.map((item) => (
-                        <SkeletonItemLikeGenre />
+                    listLikeGenre.map((item,index) => (
+                        <SkeletonItemLikeGenre key={index}/>
                     ))
                 }
             </div>

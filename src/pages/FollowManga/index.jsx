@@ -14,7 +14,6 @@ let numberRender = 0;
 function FollowManga(props) {
 
     numberRender++;
-    console.log(numberRender);
     const dispatch = useDispatch();
     useEffect(()=>{
         const action = getListMangaFollow();
@@ -22,7 +21,6 @@ function FollowManga(props) {
     },[])
 
     const StateInfo = useSelector(state => state)
-    console.log(StateInfo,"firstTime");
     const MangaLoveInfo = StateInfo.mangaLove;
 
     const listManga = MangaLoveInfo.listMangaLove;
@@ -34,12 +32,10 @@ function FollowManga(props) {
         page : 1
     });
     const [pagination , setPagination] = useState( Math.ceil(listManga.length/48))
-    console.log(pagination,"hhhh");
     const [newList , setNewList] = useState([]);
     useEffect(() => {
         setNewList(listManga.slice(param.page*24-24, param.page*24-1))
     },[param,listManga])
-    console.log(listManga,"heheh");
     const handleOnchangePage = (e, page) =>{
         setParam((x) => ({
             ...x,

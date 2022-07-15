@@ -24,14 +24,13 @@ function ListMostView(props) {
             }
         })()
     },[])
-    console.log(listManga,"hahahah");
     return (
         <div className='listLikeGenre'>
             <span>TRUYỆN ĐƯỢC XEM NHIỀU NHẤT</span>
             <div className='listLikeGenre-content'>
                 {
-                    listManga.map((item) => (
-                        <ItemListMostView item={item} />
+                    listManga.map((item,index) => (
+                        <ItemListMostView item={item} key={index}/>
                     ))
                 }
             </div>

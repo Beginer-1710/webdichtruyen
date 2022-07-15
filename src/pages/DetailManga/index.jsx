@@ -16,7 +16,6 @@ function DetailPage(props) {
     const [isComplete , setIsComplete] = useState(false);
     const mangaName = useParams().mangaId;
     const [inforManga , setInforManga] = useState([]);
-    console.log(mangaName);
     useEffect(() => {
         (async() => {
             const respone = await mangaApi.getMangaInfor(mangaName);
@@ -27,7 +26,6 @@ function DetailPage(props) {
             setIsComplete(false);
         }
     },[mangaName])
-    console.log(inforManga,"inforManga");
     return (
         <div className='detailPage'>
             <HeaderDetailPage data={inforManga}/>

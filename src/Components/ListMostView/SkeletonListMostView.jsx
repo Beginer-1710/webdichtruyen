@@ -13,8 +13,8 @@ function SkeletonListMostView(props) {
             <span>TRUYỆN ĐƯỢC XEM NHIỀU NHẤT</span>
             <div className='listLikeGenre-content'>
                 {
-                    listManga.map((item) => (
-                        <SkeletonItemListMostView />
+                    listManga.map((item,index) => (
+                        <SkeletonItemListMostView key={index}/>
                     ))
                 }
             </div>

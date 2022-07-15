@@ -17,11 +17,10 @@ function ShowMangaChaps(props) {
     const handleClickReverse = () => {
         setReverse(x => !x);
     } 
-    console.log(reverse);
+
     useMemo(() => {
         data.reverse();
     },[reverse])
-    console.log(data);
     return (
         <div className='showMangaChaps'>
             <div className='showMangaChaps-container'>
@@ -44,8 +43,8 @@ function ShowMangaChaps(props) {
                         </div>
                         <div className='showMangaChaps-main_chaps'>
                             {
-                                data.map((item) => (
-                                    <Link to={`/webdichtruyen/manga/${mangaName}/${item.chapEP}`} >
+                                data.map((item,index) => (
+                                    <Link to={`/webdichtruyen/manga/${mangaName}/${item.chapEP}`} key={index}>
                                         <div className='chap-item borderBottom chapItemAria'>
                                             <div className='chap-item_tittle chapItemLocation bold'>{item?.chapTitle}</div>
                                             <div className='chapItemLocation chapItemLocationMidle'>{item?.chapTime}</div>

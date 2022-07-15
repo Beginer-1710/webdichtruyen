@@ -17,7 +17,6 @@ const LoveMangaSlice = createSlice({
             state.listMangaLove = JSON.parse(localStorage.getItem(JSON.parse(localStorage.getItem("user"))?.username));
             const tempList = state.listMangaLove;
             const newArray = [...tempList,action.payload];
-            console.log(newArray,tempList);
             const temp = [];
             newArray.forEach((item1,index) => {
                 let unSame = false;
@@ -31,10 +30,8 @@ const LoveMangaSlice = createSlice({
                     temp.push(item1);
                 }
             })
-            console.log(state,"heheheheheheheheh");
             state.listMangaLove = temp;
             localStorage.setItem(state.user,JSON.stringify(state.listMangaLove))
-            console.log(state.listMangaLove);
         },
         getListMangaFollow(state,action){
             state.user = JSON.parse(localStorage.getItem("user"))?.username || ""

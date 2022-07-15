@@ -15,8 +15,8 @@ function ListManga(props) {
     return (
         <>
             {
-                listManga.map((item) => (    
-                        <div className='item_change'>
+                listManga.map((item,index) => (    
+                        <div className='item_change' key={index}>
                             <ItemManga item={item} />
                         </div>
                 ))

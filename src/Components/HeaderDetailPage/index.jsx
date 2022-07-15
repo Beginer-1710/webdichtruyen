@@ -82,8 +82,8 @@ function HeaderDetailPage(props) {
                         <span className='SpaceLeftInfor'>Rating : </span>
                         <div className='List-container marginLeft-20px'>
                             {
-                                Array.from(new Array(data?.rating)).map((index) => (
-                                    <StarIcon className='ratingIcon'/>
+                                Array.from(new Array(data?.rating)).map((item,index) => (
+                                    <StarIcon className='ratingIcon' key={index}/>
                                 ))
                             }
                         </div>
@@ -92,8 +92,8 @@ function HeaderDetailPage(props) {
                         <span className='SpaceLeftInfor'>Tác giả :</span>
                         <div className='List-container'>
                             {
-                                authors.map((item) => (
-                                    <div className='ItemList'>
+                                authors.map((item,index) => (
+                                    <div className='ItemList' key={index}>
                                         {item}
                                     </div>
                                 ))
@@ -104,8 +104,8 @@ function HeaderDetailPage(props) {
                         <span className='SpaceLeftInfor'>Thể loại :</span>
                         <div className='List-container'>
                             {
-                                genres.map((item) => (
-                                    <div className='ItemList'>
+                                genres.map((item,index) => (
+                                    <div className='ItemList' key={index}>
                                         {item}
                                     </div>
                                 ))

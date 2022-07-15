@@ -28,7 +28,7 @@ function TypePage(props) {
         sort : 2
 
     }
-    console.log("New Array",objectParam);
+
     const [numberMangas , setNumberMangas] = useState(0)
     const [param , setParam] = useState({
         ...originParam
@@ -83,7 +83,6 @@ function TypePage(props) {
         }))
 
     }
-    console.log(param , typeSearch);
     return (
        <>
         <SliderGenre numberMangas={numberMangas} lastUpdate={listManga[0]?.lastUpdate} typeManga={param?.genre || nameType} imgTypePage={listManga[0]?.cover}/>

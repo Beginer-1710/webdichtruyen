@@ -71,7 +71,6 @@ function Home(props) {
         CurrnetLink(`/webdichtruyen/page=${page}`)
     }
 
-    console.log(isComplete);
         return (
         <>
             <HeaderSlider />     

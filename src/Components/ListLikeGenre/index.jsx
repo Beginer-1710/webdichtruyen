@@ -39,8 +39,8 @@ function ListLikeGenre(props) {
             <span>THỂ LOẠI ĐƯỢC YÊU THÍCH</span>
             <div className='listLikeGenre-content'>
                 {
-                    listLikeGenre.map((item) => (
-                        <ItemLikeGenre item={item} />
+                    listLikeGenre.map((item,index) => (
+                        <ItemLikeGenre item={item} key={index}/>
                     ))
                 }
             </div>
