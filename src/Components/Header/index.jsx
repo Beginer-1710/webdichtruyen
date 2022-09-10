@@ -168,7 +168,7 @@ function Header(props) {
                 <div className='header-flow2_content'>
                     <div className='header-flow2_left'>
                         <a href="/webdichtruyen" className='header-mainLogo'>
-                            <img src="https://assets.dichtruyenvip.com/assets/images/logo-1.png" alt="logoPage" />
+                            <img src="https://cdn.popsww.com/popsapp/assets/images/icons/logo-pops.png?format=webp" alt="logoPage" />
                         </a>
                         <div className='header-flow2_buttonMenu header-button_type'>
                             Thể loại
